@@ -7,7 +7,7 @@ async function handleGenerateNewUser(req, res){
     const shortId = nanoid(8);
 await URL.create({
     shortId: shortId,
-    redirectUrl: body.url,
+    redirectURL: body.url,
     visitHistory: []
 })
 return res.render("home", {

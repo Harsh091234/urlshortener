@@ -6,7 +6,7 @@ shortId: {
     required: true,
     unique: true
 },
-redirectUrl: {
+redirectURL: {
     type: String,
     required: true
 },

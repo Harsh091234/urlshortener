@@ -5,18 +5,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      font-size: x-large;
+      font-family: serif;
+      
+    }
+    h1{
+      margin-top: 10px;
+      font-size: 2rem;
+    }
+    .form{
+      margin-top: 10px;
+    }
+    .submitBtn{
+      padding: 5px 30px;
+    
+      font-size: large;
+    }
+  </style>
 </head>
 
 <body>
   <h1>Url shortener</h1>
-  <% if (locals.id) { %>
-    <p>Url generated: https://localhost:8001/url/<%= id %>
+  <% if (locals.id) { %>        
+    <p>Url generated: http://localhost:8001/url/<%= id %>
     </p>
     <% } %>
-      <form action="/url" method="post">
+      <form action="/url" method="post" class="form">
         <Label>Enter your url</Label>
         <input type="text" name="url" placeholder="https://example">
-        <button type="submit">Generate</button>
+        <button type="submit" class="submitBtn">Generate</button>
       </form>
       <div>
         <% if (locals.urls) { %>
