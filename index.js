@@ -7,11 +7,14 @@ const staticRoute = require("./routes/staticRouter")
 const userRoute = require("./routes/user");
 const cookieParser = require("cookie-parser");
 const { restrictToLoggedinUserOnly, checkAuth } = require("./middlewares/auth")
+require("dotenv").config();
 
 const app = express();
-const PORT = 8001;
+const PORT = process.env.PORT || 8001;
 
-connectToMongoDB("mongodb://localhost:27017/short-url")
+// connectToMongoDB(process.env.db_url_local)
+//     .then(() => console.log("mongodb connected"));
+connectToMongoDB(process.env.db_url)
     .then(() => console.log("mongodb connected"));
 app.use(cookieParser());
 app.use(express.json());
